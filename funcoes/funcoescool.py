@@ -30,10 +30,10 @@ def menu_atendimento():
 def menu_consultas():
     userop = int(input('\n(1) Consulta/Relatorio\n(2) Voltar\n\u2605 ) Digite: '))
 
-def erase(): # vai limpar o terminal/cmd pra nn ficar feião kk
-    if os.name == 'nt': #linux
+def erase(): 
+    if os.name == 'nt': 
         os.system('cls')
-    elif os.name == 'posix': #windows
+    elif os.name == 'posix': 
         os.system('clear')
 
 def cadastro_usuarios():
@@ -41,7 +41,7 @@ def cadastro_usuarios():
         print("Cadastre um novo funcionário, pois não temos nenhum cadastrado.")
         nomeusuario = input("Nome do novo funcionário: ")
         senha = input("Digite a senha: ")
-        usuarios.append([nomeusuario, senha, 'A'])  # Adiciona com permissão 'A' (Administrador)
+        usuarios.append([nomeusuario, senha, 'A'])  
         print("Funcionário cadastrado com sucesso!")
     else:
         nomeusuario = input("Digite o nome do novo funcionário: ")
@@ -58,10 +58,10 @@ def login_usuario():
         for usuario in usuarios:
             if nomeusuario == usuario[0] and senha == usuario[1]:
                 usuario_logado = usuario
-                tipo = usuario[2]  # Define o tipo conforme o registro do usuário
+                tipo = usuario[2]  
                 print("Funcionário autenticado.")
                 return tipo
-        # Se não houver correspondência, informa falha no login
+       
         print("Funcionário ou senha inválido!")
         return None
 
@@ -326,6 +326,3 @@ def consultar_cliente():
                 break
         if not cliente_encontrado:
             print("Cliente não encontrado.")
-
-
-# oi professor :D
